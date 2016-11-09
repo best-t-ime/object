@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/userCss/login.css"/>
+</head>
+<body>
+<!--导航栏-->
+<div>
+    <div class="icon">
+        <span class="fa fa-angle-left" onclick="location.href='/'"></span>
+    </div>
+    <div class="log">
+        <p class="login"> 京东登录 </p>
+    </div>
+</div>
+<hr/>
+
+<!--表格-->
+<form action="">
+    <input type="text" name="username" placeholder="用户名/邮箱/已验证手机" required=""/><br/><br/>
+    <input type="password" name="password" placeholder="请输入密码" required=""/><br/><br/>
+    <button type="submit" class="button"> 登录 </button>
+</form>
+
+<!--找回密码模块-->
+<div class="retr">
+    <span class="circle"></span>
+    <p> 一个月内免登录 </p>
+    <div>
+        <span class="fa fa-lock"> 找回密码 </span>
+        <span class="fa fa-mobile" onclick="location.href='register.html'"> 快速注册 </span>
+    </div>
+</div>
+</body>
+<script src="/js/jquery.js"></script>
+<script src="/userJs/login.js"></script>
+</html>

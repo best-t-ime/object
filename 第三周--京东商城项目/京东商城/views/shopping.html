@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> 购物车页面 </title>
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/userCss/shopping.css" />
+</head>
+
+<body>
+    <!--导航栏-->
+    <header>
+        <div class="icon">
+            <span class="fa fa-angle-left" onclick="location.href='/'"></span>
+        </div>
+        <div class="log">
+            <p class="login"> 京东购物车 </p>
+        </div>
+        <div class="list">
+            <span class="fa fa-list"></span>
+        </div>
+    </header>
+
+    <div class="username">
+        <p><span></span> 购物车 </p>
+    </div>
+
+    <!--物品编辑-->
+    <div class="shop-infor">
+        {{each datas as data}}
+        <section>
+            <div class="shop-left">
+                <img src="/uploads/{{data.name}}.jpg" alt="" />
+            </div>
+            <div class="shop-right">
+                <h3>{{data.name}}</h3>
+                <span>{{data.descri}}</span><br/>
+                <span>{{data.price}}</span>
+                <button type="button" class="remove" data-id="{{data.id}}"> 删除 </button>
+            </div>
+        </section>
+        {{/each}}
+    </div>
+
+    <div class="num">
+        <p>没有商品</p>
+    </div>
+    <div>
+        <button type="button" class="origin" onclick="location.href='/'"> 继续购买商品 </button>
+    </div>
+</body>
+<script src="/js/jquery.js"></script>
+<script src="/js/jquery.cookie.js"></script>
+<script>
+    //获取主页中登录的用户ID
+    console.log($.cookie())
+    console.log($.cookie('username'))
+    var username = $.cookie('username')
+    $('.username span').text(username + '的')
+
+$('.remove').click(function(){
+    var ids = $(this).attr('data-id')
+    console.log(ids)
+    $.get('/removes/' + ids, null, function(res){
+        if(res.result == 1){
+            location.reload()
+        } else{
+            alert(res.message)
+        }
+    })
+})
+
+var nums = $('.shop-infor').children('section').length
+if( nums != 0 ){
+    $('.num').children('p').html('已添加 <strong>' + nums + '</strong> 个商品')
+}
+
+</script>
+
+</html>

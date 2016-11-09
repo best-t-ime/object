@@ -1,0 +1,148 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+p{
+    margin: 0px;
+}
+header{
+    height: 40px;
+    width: 100%;
+    background: rgba(255,0,0,0.7);
+    position: fixed;
+    z-index: 99;
+}
+.logo{
+    height: 40px;
+    display: inline-block;
+    overflow: hidden;
+}
+.logo img{
+    height: 100%;float: left;
+}
+.search{
+    display: inline-block;
+    position: absolute;
+    margin-top: 2px;
+    margin-left: 5px;
+}
+.search input{
+    border-radius: 1rem;
+    line-height: 30px;
+    width: 50vw;
+}
+.denglu{
+    float: right;
+}
+.login{
+    display: inline-block;
+    margin: 10px;
+    float: left;
+    color: #ffffff;
+    cursor: pointer;
+}
+.signout{
+    float: right;
+    margin-top: 8px;
+    margin-right: 5px;
+    display: none;
+}
+.banner{
+    height: 45vw;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.imgbox {
+    height: 100%;
+    overflow: hidden;
+    width: 5000px;
+    position: relative;
+}
+.imgbox li{
+    height: 100%;
+    float: left;
+
+}
+.imgbox li img{
+    height: 100%;
+}
+.num{
+    position: absolute;
+    margin-top: -20px;
+    width: 100%;
+    text-align: center;
+}
+.num li{
+    border: solid 1px #ffffff;
+    padding: 3px;
+    display: inline-block;
+    border-radius: 50%;
+}
+.num-sty{
+    background-color: #ffffff;
+    cursor: pointer;
+}
+main ul{
+    overflow: hidden;
+    margin-top: 20px;
+}
+main ul li{
+    float: left;
+    width: 19vw;
+    text-align: center;
+}
+main img{
+    height: 30px;
+}
+
+.recom hr{
+    margin: 20px 0;
+}
+.fa-arrow-circle-o-up{
+    background-color: #ffffff;
+    line-height: 25px;
+    position: absolute;
+    margin-left: 128px;
+    margin-top: -33px;
+    padding: 0 15px;
+}
+.detail ul{
+    overflow: hidden;
+    margin-bottom: 45px;
+}
+.detail ul li{
+    border: solid 1px #cccccc;
+    margin: 7px;
+    font-size: 13px;
+
+}
+.detail ul li a{
+    text-decoration: none;
+    color: #333333;
+}
+.detail img{
+    width: 50vh;
+}
+.footer{
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #cccccc;
+    position: fixed;
+}
+.footer ul li{
+    float: left;
+    width: 24vw;
+    text-align: center;
+    cursor: pointer;
+}
+.update, .shop{
+    display: none;
+}

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>问答首页</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/all.css"/>
+    <style>
+        .main{
+            overflow:hidden; margin-bottom:15px; position:relative;
+        }
+        .main img{
+            width:80px; height:80px; border-radius: 50%; border:solid 2px #eee; float:left;
+        }
+        .main-right{
+            float:left;
+        }
+        .main h4{
+            font-weight:bold;
+        }
+        .main>div p:last-of-type{
+            color:#666;
+        }
+        .ans-left{
+            width:80px; height:80px; border-radius: 50%; border:solid 2px #eee; float:right;
+        }
+        .ans-right{
+            float:right;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container dropdown">
+        <a class="navbar-brand" href="/">智游教育</a>
+        <div class="navbar-text pull-right text-right">
+            <span id="ask"><span class="glyphicon glyphicon-plus"></span> 提问</span>&#x3000;
+                    <span id="user" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <span>登录</span>
+                    </span>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li><a class="text-right" href="user.html">个人资料</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a class="text-right">退出</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container questions">
+    <section>
+        {{each datas as asks}}
+        <div class="main" questions="{{asks.questions}}">
+            <div class="main-left">
+                <img src="/uploads/{{asks.creatUser.petname}}.jpg" alt=""/>
+            </div>
+            <div class="main-right">
+                <h4>{{asks.creatUser.petname}}</h4>
+                <p>{{asks.content}}</p>
+                <p>{{asks.time | dateTime}}</p>
+            </div>
+        </div>
+        {{if asks.answers}}
+            {{each asks.answers as ans}}
+                <div class="main ans">
+                    <div class="ans-left">
+                        <img src="/uploads/{{ans.petname}}.jpg" alt=""/>
+                    </div>
+                    <div class="ans-right">
+                        <h4 class="text-right">{{ans.petname}}</h4>
+                        <p>{{ans.content}}</p>
+                        <p class="text-right">{{ans.time | dateTime}}</p>
+                    </div>
+                </div>
+            {{/each}}
+        {{/if}}
+        {{/each}}
+    </section>
+</div>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="scripts/index.js"></script>
+</html>
