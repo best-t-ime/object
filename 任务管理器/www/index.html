@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"></meta>
+        <meta name="author" content="梦"></meta>
+        <title> 任务管理器 </title>
+        <link rel="stylesheet" href="js/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        <link rel="stylesheet" href="css/index.css"></link>
+    </head>
+    <body>
+        <main>
+            <!--展示时间的区域-->
+            <header>
+                <h1>XXXX年XX月XX日 &#x3000; XXX</h1>
+                <div id="radio">
+                    <input type="radio" id="radio1" name="radio"><label for="radio1">昨天</label>
+                    <input type="radio" id="radio2" name="radio" checked="checked"><label for="radio2">今天</label>
+                    <input type="radio" id="radio3" name="radio"><label for="radio3">明天</label>
+                    <input type="radio" id="radio4" name="radio"><label for="radio4">第三天</label>
+                    <input type="radio" id="radio5" name="radio"><label for="radio5">第四天</label>
+                    <input type="radio" id="radio6" name="radio"><label for="radio6">日历</label>
+                </div>
+            </header>
+            
+            <!--展示任务的区域-->
+            <section>
+                <ul id="sortable">
+                    
+                </ul>
+            </section>
+            
+            <!--添加删除任务的区域-->
+            <footer>
+                <span class="fa fa-plus-circle fa-2x"></span>
+                <div id="editBox">
+                    <input type="text" required>
+                    <button>提交</button>
+                </div>
+            </footer>
+        </main>
+    </body>
+</html>
+<script id="list" type="text/html">
+    
+        {{each arr as item}}
+            <li class="ui-state-default">
+                <span>{{item.content}}</span>
+                <input type="checkbox" id="{{item.id}}" {{item.complete ? 'checked' : ''}}>
+                <label for="{{item.id}}"></label>
+            </li>
+        {{/each}}
+    
+</script>
+<!--采用requirejs模块化,设置入口js文件-->
+<script src="js/libs/require.js" data-main="js/index"></script>
+ 

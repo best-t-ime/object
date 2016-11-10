@@ -1,0 +1,85 @@
+html{
+    height: 100%;
+}
+body{
+    /*height: 100%;*/
+    margin: 0;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    width: 600px;
+    min-height: 400px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+}
+h1{
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+/*隐藏单选按钮组中的圆点*/
+#radio label span{
+    display: none;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+footer>span{
+    color: blue;
+}
+#editBox{
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+#editBox input{
+    line-height: 30px;
+    display: inline-block;
+    width: 70%;
+}
+#editBox button{
+    padding: 5px;
+}
+section{
+    margin-bottom: 50px;
+}
+
+/*列表展示的样式*/
+#sortable{
+    margin: 10px 5px;
+    padding: 0;
+    list-style: none;
+    line-height: 30px;
+}
+.ui-state-default{
+    padding: 5px;
+    height: 30px;
+}
+.ui-state-default input{
+    display: none;
+}
+ul li label{
+    width: 30px;
+    height: 30px;
+    float: right;
+    background-size: 100% 100%;
+}
+/*根据input是否被选中设置后边的label的背景图*/
+li>input:checked+label{
+    background-image: url('images/111.png');
+}
+li>input+label{
+    background-image: url('images/222.png');
+}
+.fa-trash-o{
+    color: crimson;
+}
